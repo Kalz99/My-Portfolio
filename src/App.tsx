@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { ThemeProvider } from './context/ThemeContext'
+import Navbar from './components/Navbar'
+import HeroSection from './components/Sections/HeroSection'
 
 
 function App() {
@@ -8,7 +11,13 @@ function App() {
 
   return (
     <>
-       <div className="text-5xl font-bold underline">My Portfolio!</div>
+      <ThemeProvider>
+        <div>
+          <Navbar/>
+          <HeroSection/>
+        </div>
+       
+       </ThemeProvider>
     </>
   )
 }
