@@ -158,9 +158,9 @@ const HeroSection = () => {
                                 className="flex gap-4"
                             >
                                 {[
-                                    {icon: FiGithub, href: "https://github.com/yourusername"},
-                                    {icon: FiLinkedin, href: "https://linkedin.com/in/yourusername"},
-                                    {icon: SiX, href: "https://x.com/yourusername"},
+                                    {icon: FiGithub, href: "https://github.com/Kalz99"},
+                                    {icon: FiLinkedin, href: "https://www.linkedin.com/in/kalharag"},
+                                    {icon: SiX, href: "https://x.com/cryptoSaint1999"},
                                 ].map((social, index) => (
                                     <motion.a
                                         key={index}
