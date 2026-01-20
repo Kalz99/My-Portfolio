@@ -7,6 +7,7 @@ import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { useTheme } from "../../context/ThemeContext";
 import PROFILE_PIC from "../../assets/profileIMG.jpeg";
 import { SiX } from "react-icons/si";
+import { MoonStarIcon } from "lucide-react";
 
 const HeroSection = () => {
     const { isDarkMode } = useTheme();
@@ -90,12 +91,13 @@ const HeroSection = () => {
                     />
                 </div>
 
-                <div className="max-w-6xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div className="w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                   {/*left side - text content*/}
                         <motion.div
                             initial="hidden"
                             animate="visible"
                             variants={containerVariants}
+                            className="order-2 lg:order-1 px-4 lg:px-0"
                         >
                             <motion.div
                                 variants={textVariant}
@@ -108,7 +110,7 @@ const HeroSection = () => {
 
                             <motion.h1
                                 variants={itemVariants}
-                                className="text-4xl md:text-5xl mb-5 leading-tight font-black"
+                                className="text-3xl sm:text-4xl lg:text-5xl mb-5 leading-tight font-black"
                             >
                                 <span className={`${isDarkMode ? "text-white" : "text-gray-900"} block`}>
                                     Building digital
@@ -123,20 +125,20 @@ const HeroSection = () => {
 
                             <motion.p
                                 variants={itemVariants}
-                                className={`text-base ${isDarkMode ? "text-gray-400" : "text-gray-600"} mb-8 max-w-lg font-light leading-relaxed`}
+                                className={`text-sm sm:text-base ${isDarkMode ? "text-gray-400" : "text-gray-600"} mb-8 max-w-lg font-light leading-relaxed`}
                             >
                                 I craft beautiful, functional web applications with modern technologies and thoughtful user experiences.
                             </motion.p>
 
                             <motion.div
                                 variants={itemVariants}
-                                className="flex gap-4 mb-8 items-center"
+                                className="flex flex-col sm:flex-row gap-4 mb-8 items-start sm:items-center"
                             >
                                 <motion.button
                                     whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                     onClick={() => scrollToSection("work")}
-                                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-300"
+                                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-300 w-full sm:w-auto text-center"
                                 >
                                     View My Work
                                 </motion.button>
@@ -144,10 +146,10 @@ const HeroSection = () => {
                                     whileHover={{ y: -2 }}
                                     whileTap={{ scale: 0.98 }}
                                     onClick={() => scrollToSection("contact")}
-                                    className={`border-2 ${
+                                    className={`border-2 w-full sm:w-auto text-center ${
                                         isDarkMode ? "border-gray-600 text-gray-300 hover:border-gray-500"
                                             : "border-gray-400 text-gray-600 hover:border-gray-500"
-                                    } px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wide transition-all duration-300`}
+                                    } px-6 py-2.5 rounded-full text-sm uppercase tracking-wide transition-all duration-300`}
                                 >
                                     Get in Touch
                                 </motion.button>
@@ -177,25 +179,45 @@ const HeroSection = () => {
                                 ))}
                             </motion.div>
                         </motion.div>
-                    </div>
+                  
 
-                    <div className="w-full hidden lg:flex justify-center items-center">
+                    {/*right side - image content*/}
+                  
                         <motion.div
                             initial="hidden"
                             animate="visible"
                             variants={imageVariant}
-                            whileHover={{ scale: 1.02 }}
-                            className={`w-full max-w-sm h-auto rounded-2xl overflow-hidden shadow-2xl ${
-                                isDarkMode ? "border border-gray-800" : "border border-gray-200"
-                            }`}
+                            className="flex justify-center lg:justify-end order-1 lg:order-2"
                         >
+                    <div className="relative w-52 h-56 sm:w-60 sm:h-64 lg:w-80 lg:h-96 flex-shrink-0">
+                        <motion.div
+                            animate={{rotate:360}}
+                            transition={{duration:20, repeat:Infinity, ease:"linear"}}
+                            className="absolute -inset-2 sm:-inset-3 lg:-inset-6 rounded-3xl border-3 border-blue-500/20 pointer-events-none"
+                            />
+                            <motion.div
+                                animate={{rotate:-360}}
+                                transition={{duration:20, repeat:Infinity, ease:"linear"}}
+                                className="absolute -inset-4 sm:-inset-5 lg:-inset-8 rounded-3xl border-2 border-purple-500/10 pointer-events-none"
+                            />
+
+                            <motion.div
+                            whileHover={{scale:1.02}}
+                            className={`relative w-full h-full rounded-3xl overflow-hidden border-4 ${
+                                isDarkMode ? "border-gray-800" : "border-gray-300"
+                            } shadow-2xl`}
+                            >
+
                             <img
                                 src={PROFILE_PIC}
                                 alt="Profile"
                                 className="w-full h-full object-cover"
                             />
-                        </motion.div>
-                    </div>
+                            </motion.div>
+                            </div>
+                             </motion.div>
+                     
+                        
                 </div>
             </motion.section>
         </div>

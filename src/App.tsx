@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import HeroSection from './components/Sections/HeroSection'
+import SkillsSection from './components/Sections/SkillsSection'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <div>
           <Navbar/>
           <HeroSection/>
+          <SkillsSection/>
         </div>
        
        </ThemeProvider>
