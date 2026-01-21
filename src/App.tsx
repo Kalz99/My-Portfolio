@@ -8,18 +8,18 @@ import SkillsSection from './components/Sections/SkillsSection'
 
 
 function App() {
- 
+
 
   return (
     <>
       <ThemeProvider>
-        <div>
-          <Navbar/>
-          <HeroSection/>
-          <SkillsSection/>
+        <div className='pb-[100vh]'>
+          <Navbar />
+          <HeroSection />
+          <SkillsSection />
         </div>
-       
-       </ThemeProvider>
+
+      </ThemeProvider>
     </>
   )
 }
