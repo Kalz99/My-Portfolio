@@ -1,9 +1,8 @@
-import { use, useRef } from "react";
-import { delay, motion, useInView, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 import { useTheme } from "../../context/ThemeContext";
-import { i } from "framer-motion/client";
-import { SKILLS_CATEGORIES, TECH_STACK } from "../../utils/data";
+import { SKILLS_CATEGORIES } from "../../utils/data";
 import { containerVariants, itemVariants } from "../../utils/helper";
 
 const SkillsSection = () => {
@@ -17,15 +16,6 @@ const SkillsSection = () => {
    });
    const y = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
-
-   const skillBarVariants = {
-      hidden: { width: 0, opacity: 0 },
-      visible: (level: number) => ({
-         width: `${level}%`,
-         opacity: 1,
-         transition: { duration: 1.2, ease: "easeOut", delay: 0.3 }
-      })
-   };
    return (
       <section
          ref={sectionRef}
@@ -74,30 +64,30 @@ const SkillsSection = () => {
                </motion.p>
             </motion.div>
 
-            {/* Skills Categories */}
+            {/* Regular Skills Categories */}
             <motion.div
                initial="hidden"
                animate={isInView ? "visible" : "hidden"}
                variants={containerVariants}
-               className="grid md:grid-cols-2 gap-8 lg:gap-12"
+               className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-8 lg:mb-12"
             >
-               {SKILLS_CATEGORIES.map((category, categoryIndex) => (
+               {SKILLS_CATEGORIES.filter(c => !c.isFullWidth).map((category) => (
                   <motion.div
                      key={category.title}
                      variants={itemVariants}
-                     className={`p-8 rounded-2xl border ${isDarkMode ? "bg-gray-900/50 border-gray-800 backdrop-blur-sm" : "bg-white/80 border-gray-200 backdrop-blur-sm"
-                        }`}
+                     className={`p-8 rounded-[2rem] border transition-all duration-300 ${isDarkMode ? "bg-gray-900/40 border-gray-800 hover:border-blue-500/30" : "bg-white/80 border-gray-200 hover:shadow-xl hover:border-blue-200"
+                        } backdrop-blur-sm`}
                   >
                      {/*category Title */}
-                     <div className="flex items-center mb-6">
+                     <div className="flex items-center mb-8">
                         <div
-                           className={`p-3 rounded-xl ${isDarkMode ? "bg-gray-800" : "bg-gray-100"
+                           className={`p-3 rounded-xl ${isDarkMode ? "bg-blue-500/10 text-blue-400" : "bg-blue-50 text-blue-600"
                               } mr-4`}
                         >
-                           <category.icon className="" size={24} />
+                           <category.icon size={24} />
                         </div>
                         <div>
-                           <h3 className="text-xl font-medium mb-1">
+                           <h3 className={`text-xl font-medium mb-1 ${isDarkMode ? "text-blue-400" : "text-blue-500"}`}>
                               {category.title}
                            </h3>
                            <p className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"
@@ -108,37 +98,97 @@ const SkillsSection = () => {
                         </div>
                      </div>
 
-                     {/* SKills list */}
-                     <div className="space-y-4">
-                        {category.skills.map((skill, skillIndex) => (
-                           <div key={skill.name} className="group">
-                              <div className="flex justify-between items-center mb-2">
-                                 <span className="text-sm font-medium">{skill.name}</span>
-                                 <span
-                                    className={`text-xs ${isDarkMode ? "text-gray-500" : "text-gray-600"
-                                       }`}
-                                 >
-                                    {skill.level}%
-                                 </span>
-                              </div>
-
+                     {/* Skills list - Icon Grid */}
+                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-6">
+                        {category.skills.map((skill) => (
+                           <motion.div
+                              key={skill.name}
+                              variants={itemVariants}
+                              className="group flex flex-col items-center justify-start text-center"
+                           >
                               <div
-                                 className={`h-2 rounded-full overflow-hidden ${isDarkMode ? "bg-gray-800" : "bg-gray-200"
-                                    }`}
+                                 className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 ${isDarkMode
+                                    ? "bg-gray-800 border-gray-700 group-hover:bg-gray-700 group-hover:border-blue-500/50"
+                                    : "bg-gray-50 border-gray-100 group-hover:bg-white group-hover:border-blue-200"
+                                    } border shadow-sm group-hover:shadow-md group-hover:-translate-y-1`}
                               >
-
-                                 <motion.div
-                                    variants={skillBarVariants}
-                                    initial="hidden"
-                                    animate={isInView ? "visible" : "hidden"}
-                                    custom={skill.level}
-                                    className={`h-full ${skill.color} rounded-full relative`}
-                                 >
-                                    <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                 </motion.div>
+                                 <skill.icon
+                                    className={`w-7 h-7 transition-colors duration-300 ${isDarkMode ? "text-gray-400 group-hover:text-white" : "text-gray-600"
+                                       } ${skill.color ? `group-hover:${skill.color}` : ""}`}
+                                 />
                               </div>
-                           </div>
+                              <span className={`text-[10px] uppercase tracking-wider font-medium transition-colors duration-300 ${isDarkMode ? "text-gray-500 group-hover:text-gray-300" : "text-gray-500 group-hover:text-gray-800"
+                                 }`}>
+                                 {skill.name}
+                              </span>
+                           </motion.div>
                         ))}
+                     </div>
+                  </motion.div>
+               ))}
+            </motion.div>
+
+            {/* Full Width Skills Category (e.g. Other) */}
+            <motion.div
+               initial="hidden"
+               animate={isInView ? "visible" : "hidden"}
+               variants={containerVariants}
+               className="space-y-8"
+            >
+               {SKILLS_CATEGORIES.filter(c => c.isFullWidth).map((category) => (
+                  <motion.div
+                     key={category.title}
+                     variants={itemVariants}
+                     className={`p-8 rounded-[2rem] border transition-all duration-300 ${isDarkMode ? "bg-gray-900/40 border-gray-800 hover:border-blue-500/30" : "bg-white/80 border-gray-200 hover:shadow-xl hover:border-blue-200"
+                        } backdrop-blur-sm`}
+                  >
+                     <div className="flex flex-col gap-8">
+                        {/* Topic on Top - Centered */}
+                        <div className="flex flex-col items-center text-center">
+                           <div
+                              className={`p-3 rounded-xl ${isDarkMode ? "bg-blue-500/10 text-blue-400" : "bg-blue-50 text-blue-600"
+                                 } mb-4`}
+                           >
+                              <category.icon size={24} />
+                           </div>
+                           <div>
+                              <h3 className={`text-xl font-medium mb-1 ${isDarkMode ? "text-blue-400" : "text-blue-500"}`}>
+                                 {category.title}
+                              </h3>
+                              <p className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-600"
+                                 } max-w-2xl mx-auto`}
+                              >
+                                 {category.description}
+                              </p>
+                           </div>
+                        </div>
+
+                        {/* Icons Below */}
+                        <div className="flex flex-wrap gap-6 md:gap-8 justify-center py-2">
+                           {category.skills.map((skill) => (
+                              <motion.div
+                                 key={skill.name}
+                                 variants={itemVariants}
+                                 className="group flex flex-col items-center justify-start text-center"
+                              >
+                                 <div
+                                    className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-3 transition-all duration-300 ${isDarkMode
+                                       ? "bg-gray-800 border-gray-700 group-hover:bg-gray-700 group-hover:border-blue-500/50"
+                                       : "bg-gray-50 border-gray-100 group-hover:bg-white group-hover:border-blue-200"
+                                       } border shadow-sm group-hover:shadow-md group-hover:-translate-y-1`}
+                                 >
+                                    <skill.icon
+                                       className={`w-7 h-7 transition-colors duration-300 ${isDarkMode ? "text-gray-400 group-hover:text-white" : "text-gray-600"
+                                          } ${skill.color ? `group-hover:${skill.color}` : ""}`}
+                                    />
+                                 </div>
+                                 <span className={`text-[10px] uppercase tracking-wider font-medium transition-colors duration-300 ${isDarkMode ? "text-gray-500 group-hover:text-gray-300" : "text-gray-500 group-hover:text-gray-800"
+                                    }`}>
+                                    {skill.name}
+                                 </span>
+                              </motion.div>
+                           ))}
+                        </div>
                      </div>
                   </motion.div>
                ))}

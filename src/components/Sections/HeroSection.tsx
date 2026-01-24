@@ -101,21 +101,21 @@ const HeroSection = () => {
                             className={`text-xs uppercase tracking-widest mb-4 ${isDarkMode ? "text-gray-500" : "text-gray-500"
                                 }`}
                         >
-                            Full Stack Developer | Web3 Enthusiast
+                            Full Stack Engineer | AI/ML Enthusiast
                         </motion.div>
 
                         <motion.h1
                             variants={itemVariants}
-                            className="text-3xl sm:text-4xl lg:text-5xl mb-5 leading-tight font-black"
+                            className="text-3xl sm:text-4xl lg:text-5xl leading-tight font-medium mb-6"
                         >
                             <span className={`${isDarkMode ? "text-white" : "text-gray-900"} block`}>
-                                Building digital
+                                Building Digital
                             </span>
                             <span className="text-blue-500 block">
-                                experiences
+                                Experiences
                             </span>
                             <span className={`${isDarkMode ? "text-white" : "text-gray-900"} block`}>
-                                that matter
+                                That Matter
                             </span>
                         </motion.h1>
 
@@ -123,8 +123,7 @@ const HeroSection = () => {
                             variants={itemVariants}
                             className={`text-sm sm:text-base ${isDarkMode ? "text-gray-400" : "text-gray-600"} mb-8 max-w-lg font-light leading-relaxed`}
                         >
-                            I craft beautiful, functional web applications with modern technologies and thoughtful user experiences.
-                        </motion.p>
+                            I design and build digital products from the ground up, focusing on reliability, usability, and real-world impact.  </motion.p>
 
                         <motion.div
                             variants={itemVariants}

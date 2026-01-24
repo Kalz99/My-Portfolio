@@ -1,6 +1,6 @@
-import { delay } from "framer-motion";
+import type { Variants } from "framer-motion";
 
-export const containerVariants = {
+export const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
@@ -12,7 +12,7 @@ export const containerVariants = {
 };
 
 
-const itemVariants = {
+const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
         y: 0,
