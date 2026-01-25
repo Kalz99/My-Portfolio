@@ -29,12 +29,12 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
-import PROJECT_IMG1 from "../assets/project1.jpg";
-import PROJECT_IMG2 from "../assets/project1.jpg";
-import PROJECT_IMG3 from "../assets/project1.jpg";
-import PROJECT_IMG4 from "../assets/project1.jpg";
-import PROJECT_IMG5 from "../assets/project1.jpg";
-import PROJECT_IMG6 from "../assets/project1.jpg";
+import PROJECT_IMG1 from "../assets/pro1.jpg.png";
+import PROJECT_IMG2 from "../assets/pro2.png";
+import PROJECT_IMG3 from "../assets/pro3.png";
+import PROJECT_IMG4 from "../assets/pro4.png";
+import PROJECT_IMG5 from "../assets/pro5.png";
+import PROJECT_IMG6 from "../assets/pro6.png";
 //import PROJECT_IMG1 from "../assets/project1.jpg";
 //import PROJECT_IMG2 from "../assets/project1.jpg";
 //import PROJECT_IMG3 from "../assets/project1.jpg";  
@@ -151,69 +151,69 @@ export const TECH_STACK = [
 export const PROJECTS = [
     {
         id: 1,
-        title: "Project One",
+        title: "Lazaro Clothing POS System",
         description: "A brief description of Project One highlighting its features and technologies used.",
         image: PROJECT_IMG1,
-        tags: ["React", "Node.js", "MongoDB"],
-        link: "#",
-        githubURL: "#",
+        tags: ["React", "Node.js", "Tailwind CSS", "Typescript", "MYSQL"],
+        link: "https://lazaro.luxn.lk/",
+        githubURL: "https://github.com/Kalz99/Clothing-Shop-POS-System",
         featured: true,
-        category: "Web Development",
+        category: "Web Application",
     },
     {
         id: 2,
-        title: "Project One",
+        title: "LUXN Admin Dashboard",
         description: "A brief description of Project One highlighting its features and technologies used.",
         image: PROJECT_IMG2,
-        tags: ["React", "Node.js", "MongoDB"],
+        tags: ["HTML5", "CSS3", "JS", "Firebase", "Bootstrap"],
         link: "#",
         githubURL: "#",
         featured: true,
-        category: "Web Development",
+        category: "Web Application",
     },
     {
         id: 3,
-        title: "Project One",
+        title: "Cloud Based Automotive Workshop Management System",
         description: "A brief description of Project One highlighting its features and technologies used.",
         image: PROJECT_IMG3,
-        tags: ["React", "Node.js", "MongoDB"],
-        link: "#",
+        tags: ["HTML5", "CSS3", "JS", "MYSQL", "Bootstrap"],
+        link: "https://rahulamotors.luxn.lk/",
         githubURL: "#",
         featured: true,
-        category: "Web Development",
+        category: "Web Application",
     },
     {
         id: 4,
-        title: "Project One",
+        title: "LUXN Corporate Dashboard",
         description: "A brief description of Project One highlighting its features and technologies used.",
         image: PROJECT_IMG4,
-        tags: ["React", "Node.js", "MongoDB"],
-        link: "#",
+        tags: ["HTML5", "CSS3", "JS", "Firebase", "Bootstrap"],
+        link: "https://luxncard.com/teams.html?id=wZl1CpqV7KgDDnHahAgeUCH57P63",
         githubURL: "#",
         featured: true,
-        category: "Web Development",
+        category: "Web Application",
     },
     {
         id: 5,
-        title: "Project One",
+        title: "TraceCore+",
         description: "A brief description of Project One highlighting its features and technologies used.",
         image: PROJECT_IMG5,
-        tags: ["React", "Node.js", "MongoDB"],
+        tags: ["Python", "SQLite", "Tkinter", "Pillow", "PyInstaller"],
         link: "#",
-        githubURL: "#",
+        githubURL: "https://github.com/Kalz99/TraceCore",
         featured: true,
-        category: "Web Development",
+        category: "Desktop Application",
     },
     {
         id: 6,
-        title: "Project One",
+        title: "LUXN Website",
         description: "A brief description of Project One highlighting its features and technologies used.",
         image: PROJECT_IMG6,
-        tags: ["React", "Node.js", "MongoDB"],
-        link: "#",
+        tags: ["React", "Node.js", "Tailwind CSS", "Javascript", "Firebase"],
+        link: "https://luxncard.com",
         githubURL: "#",
         featured: true,
-        cwategory: "Web Development",
+        category: "Web Application",
     }
 
 ];
