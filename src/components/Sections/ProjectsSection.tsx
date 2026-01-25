@@ -73,11 +73,11 @@ const ProjectsSection = () => {
                                 } transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2`}
                         >
                             {/* Image Container */}
-                            <div className="relative h-64 overflow-hidden">
+                            <div className="relative overflow-hidden bg-gray-100" style={{ aspectRatio: '5/3' }}>
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                                     <div className="flex gap-4">
