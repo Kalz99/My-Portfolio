@@ -152,9 +152,14 @@ export const PROJECTS = [
     {
         id: 1,
         title: "Lazaro Clothing POS System",
-        description: "A brief description of Project One highlighting its features and technologies used.",
+        description: "A comprehensive point-of-sale solution specifically designed for retail clothing stores.",
+        fullDescription: `This is a web-based clothing Point of Sale (POS) system designed for real-world retail store usage. It enables cashiers to quickly search products, add items to the cart, generate invoices, and complete sales with minimal steps, making it ideal for high-traffic clothing stores.
+
+The system supports real-time inventory updates, product and category management, and secure user authentication to ensure smooth daily operations. Built as a Single Page Application, it provides fast navigation without page reload issues and supports direct receipt printing for billing workflows.
+
+The POS is optimized to run on standard retail hardware setups, including desktop or touchscreen PCs, thermal receipt printers, barcode scanners, and cash drawers. It is suitable for kiosk-style environments where speed, reliability, and ease of use are critical.`,
         image: PROJECT_IMG1,
-        tags: ["React", "Node.js", "Tailwind CSS", "Typescript", "MYSQL"],
+        tags: ["React", "Vite", "Node.js", "Express", "Tailwind CSS", "Typescript", "MYSQL"],
         link: "https://lazaro.luxn.lk/",
         githubURL: "https://github.com/Kalz99/Clothing-Shop-POS-System",
         featured: true,
@@ -163,7 +168,14 @@ export const PROJECTS = [
     {
         id: 2,
         title: "LUXN Admin Dashboard",
-        description: "A brief description of Project One highlighting its features and technologies used.",
+        description: "An enterprise-grade administrative panel for managing digital business profiles.",
+        fullDescription: `LUXN Company Dashboard is an all-in-one internal management system designed to daily business operations and provide full visibility across the organization. The platform centralizes key company functions into a single, easy-to-use dashboard, helping management and staff work more efficiently and make data-driven decisions.
+
+The system enables complete order management, allowing users to view, add, update, and track orders in real time. Integrated income and sales insights provide a clear overview of business performance, while automated shipping label printing simplifies logistics and fulfillment workflows.
+
+The dashboard also includes employee management features, such as maintaining employee records, handling leave requests and approvals, and monitoring workforce availability. A built-in stock and inventory management module ensures accurate tracking of products, low-stock alerts, and better inventory planning.
+
+Designed specifically for internal company use, the LUXN Dashboard improves operational efficiency, reduces manual work, and ensures that all departments—from sales and logistics to HR and management—operate on a single, unified system.`,
         image: PROJECT_IMG2,
         tags: ["HTML5", "CSS3", "JS", "Firebase", "Bootstrap"],
         link: "#",
@@ -173,8 +185,15 @@ export const PROJECTS = [
     },
     {
         id: 3,
-        title: "Cloud Based Automotive Workshop Management System",
-        description: "A brief description of Project One highlighting its features and technologies used.",
+        title: "Automotive workshop management system",
+        description: "A cloud-based solution for automotive service centers to manage workflows and customers.",
+        fullDescription: `The Cloud-Based Automotive Workshop Management System is a comprehensive digital solution developed for a vehicle service center to manage end-to-end workshop operations efficiently. The system centralizes all core service center activities into a single cloud platform, enabling real-time access, automation, and accurate operational control.
+
+The platform supports complete job and service management, allowing staff to record service orders, track job progress, generate invoices, and print receipts seamlessly. Integrated inventory management handles stock in/out, spare parts tracking, and low-stock monitoring to ensure uninterrupted workshop operations.
+
+For workforce management, the system includes biometric fingerprint-based attendance tracking, automatically capturing employee attendance data and using it to calculate salaries, overtime, and working hours accurately. Employee records, roles, and payroll data are managed securely within the system.
+
+Being cloud-based, the solution allows authorized users to access the system from anywhere, ensuring data security, scalability, and reliable backups. Designed specifically for automotive service centers, the system reduces manual work, improves accuracy, and enhances overall operational efficiency.`,
         image: PROJECT_IMG3,
         tags: ["HTML5", "CSS3", "JS", "MYSQL", "Bootstrap"],
         link: "https://rahulamotors.luxn.lk/",
@@ -185,7 +204,9 @@ export const PROJECTS = [
     {
         id: 4,
         title: "LUXN Corporate Dashboard",
-        description: "A brief description of Project One highlighting its features and technologies used.",
+        description: "A specialized team management solution for corporate entities using NFC technology.",
+        fullDescription: `Designed and developed the LUXN Admin Dashboard and Digital Profile platform to provide users with full control over their NFC smart business cards. The digital profile allows individual users to include social media links, contact details, company information, images, and personalized interface options.
+The admin dashboard enables admins manage their employees’ smart business cards, providing analytics on profile views, saves, shares, and connections.`,
         image: PROJECT_IMG4,
         tags: ["HTML5", "CSS3", "JS", "Firebase", "Bootstrap"],
         link: "https://luxncard.com/teams.html?id=wZl1CpqV7KgDDnHahAgeUCH57P63",
@@ -196,7 +217,8 @@ export const PROJECTS = [
     {
         id: 5,
         title: "TraceCore+",
-        description: "A brief description of Project One highlighting its features and technologies used.",
+        description: "TraceCore+ is a powerful desktop reference tool for laptop repair technicians.",
+        fullDescription: `TraceCore+ is a powerful desktop reference tool for laptop repair technicians, providing instant access to motherboard details, IC references, schematics, board views, BIOS files, and high-quality photos all in an offline, searchable database.`,
         image: PROJECT_IMG5,
         tags: ["Python", "SQLite", "Tkinter", "Pillow", "PyInstaller"],
         link: "#",
@@ -207,7 +229,10 @@ export const PROJECTS = [
     {
         id: 6,
         title: "LUXN Website",
-        description: "A brief description of Project One highlighting its features and technologies used.",
+        description: "The official web presence for LUXN (PVT) LTD, showcasing smart business solutions.",
+        fullDescription: `The LUXN website is the official online presence of LUXN, a smart business card company offering modern digital networking solutions for professionals and businesses. The website showcases LUXN’s smart business card products, services, and company information, providing visitors with a clear understanding of the brand and its offerings.
+
+Customers can browse available smart business card options, learn about features and benefits, and purchase products directly through the website using secure payment gateway integrations. The platform is designed to deliver a smooth and trustworthy buying experience, from product discovery to checkout.`,
         image: PROJECT_IMG6,
         tags: ["React", "Node.js", "Tailwind CSS", "Javascript", "Firebase"],
         link: "https://luxncard.com",
