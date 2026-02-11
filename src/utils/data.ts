@@ -292,7 +292,7 @@ export const JOURNEY_DATA = [
             "Architected, led, and directly contributed to the end-to-end design, development, and deployment of **Sri Lanka’s first NFC-based smart business card platform**, delivering individual digital profiles and enterprise-grade corporate management solutions.",
             "**Working directly with corporate clients**, conducting technical discussions to understand business requirements and delivering customized NFC smart business card solution aligned with their organizational needs.",
             "Designed and implemented corporate admin dashboards enabling organizations to centrally manage users, profiles, permissions, and NFC-linked data at scale.",
-            "Delivered **on-premise and cloud deployments**, including: **Google Cloud Platform (GCP) environments** and **Client-managed internal Windows Server infrastructures.**"
+            "Delivered **on-premise and cloud deployments**, including: **Google Cloud Platform (GCP) environments** and **Client-managed internal Windows and Linux Server infrastructures.**"
         ],
         icon: Rocket,
         color: "bg-blue-500",
